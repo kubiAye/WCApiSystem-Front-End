@@ -1,0 +1,278 @@
+/*@import "variable.styl"*/
+
+body, html
+  line-height: 1;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0 !important;
+  margin: 0 !important;
+  /*background-image: url("../img/login.png");*/
+
+
+///*//字体大小*/
+fsFactory($min,$max,$step=2)
+  for $i in 0..($max - $min) / $step
+    $value=$min + $i * $step;
+    .fs{$value}
+      font-size:  unit($value, 'px')
+factory($min,$max,$step=5)
+  for $i in 0..($max - $min) / $step
+    $value=$min + $i * $step;
+    .ml{$value}
+      margin-left:  unit($value, 'px')
+    .mr{$value}
+      margin-right:  unit($value, 'px')
+    .mt{$value}
+      margin-top:  unit($value, 'px')
+    .mb{$value}
+      margin-bottom:  unit($value, 'px')
+    .pl{$value}
+      padding-left:  unit($value, 'px')
+    .pr{$value}
+      padding-right:  unit($value, 'px')
+    .pt{$value}
+      padding-top:  unit($value, 'px')
+    .pb{$value}
+      padding-bottom:  unit($value, 'px')
+
+factory(0,100)
+fsFactory(12,70)
+/*//超出显示省略符号*/
+
+
+/*//定位/*/
+
+.rel
+  position relative
+
+.abs
+  position: absolute;
+
+/*//设置标签属性/*/
+
+.dn
+  display: none;
+
+.db
+  display: block;
+
+.dib
+  -moz-inline-stack: inline-block;
+  display: inline-block;
+
+.oh1
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+.oh2
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+.di
+  display: inline;
+
+.abs
+  position: absolute;
+.fix
+  zoom 1
+  &::after
+    display: block
+    content: "clear"
+    height: 0
+    clear: both
+    overflow: hidden
+    visibility: hidden
+  &::before
+    display: block
+    content: "clear"
+    height: 0
+    clear: both
+    overflow: hidden
+    visibility: hidden
+
+/*文本对齐方式*/
+.tc
+  text-align: center;
+
+.tr
+  text-align: right;
+
+.tl
+  text-align: left;
+
+.fl
+  float: left
+
+.fr
+  float: right
+
+.b
+  font-weight: bold
+
+.pointer
+  cursor: pointer;
+
+.tdl
+  text-decoration: underline;
+
+.col_wh
+  color: white
+
+.col_yellow
+  color: #ff9900
+
+.col_green
+  color: #8bc34a
+
+.col_cyan
+  color: #009688
+
+.col_gold
+  color: #F5DE0C
+
+.col_red
+  color: #ff534d
+
+.col_pink
+  color: #FF1F6F
+
+.rel
+  position relative
+
+.col_g5
+  color: #555
+
+.col_g7
+  color: #777
+
+.col_g9
+  color: #999
+
+.col_gc
+  color: #ccc
+
+.col_gd
+  color: #ddd
+
+.col_blue
+  color: #1E97EC
+
+.bg_white
+  background-color: white
+
+.bg_blue
+  background-color: #1E97EC
+
+.bg_yellow
+  background-color: #ff9900
+
+.bg_green
+  background-color: #8bc34a
+
+.bg_red
+  background-color: #ff534d
+
+.bg_g3
+  background-color: #333
+
+.bg_g5
+  background-color: #555
+
+.bg_g7
+  background-color: #777
+
+.bg_g9
+  background-color: #999
+
+.bg_gc
+  background-color: #ccc
+
+.bg_gd
+  background-color: #ddd
+
+.bg_ge
+  background-color: #eee
+
+/*垂直居中*/
+.flex
+  display: flex;
+
+.flex1
+  flex: 1;
+
+.flex_center
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+.flex_between
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+.flex_center_column
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+.align_items_center
+  display: flex !important;
+  align-items: center;
+
+/*边线*/
+.bt_DDD
+  border-top: 1px solid #DDDDDD
+
+.br_DDD
+  border-right: 1px solid #DDDDDD
+
+.bb_DDD
+  border-bottom: 1px solid #DDDDDD
+
+.bl_DDD
+  border-left: 1px solid #DDDDDD
+
+.click:active {
+  opacity: 0.8;
+}
+
+ // 按钮移入移出效果
+.btnHover
+  cursor pointer
+  transition 0.2s
+  &:hover
+    opacity: 0.8;
+  &:active
+    opacity: 1;
+
+// 字体移入移出效果
+.fontHover
+  cursor pointer
+  transition 0.2s
+  &:hover
+    color #1E97EC
+  &:active
+    opacity: .8;
+
+// 删除按钮移入移出效果
+.delHover
+  cursor pointer
+  transition 0.2s
+  &:hover
+    background-color #ddd !important
+  &:active
+    background-color #eee !important
+
+.must_input:before {
+  content: "* ";
+  color: #e51c23;
+}
+
+
